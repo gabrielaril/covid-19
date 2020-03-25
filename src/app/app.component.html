@@ -295,6 +295,24 @@
   }
 </style>
 
+<form #MapsForm="ngForm" (ngSubmit)="login(MapsForm)">
+  <button type="submit">
+    Entrar
+  </button>
+</form>
+
+<agm-map [latitude] = "latitude" [longitude] = longitude>
+  <agm-marker 
+      *ngFor="let m of markers"      
+      [latitude]="m.latitude"
+      [longitude]="m.longitude"
+      [markerDraggable]="false">
+  </agm-marker>
+</agm-map>
+
+
+
+
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
   <img
@@ -325,20 +343,6 @@
     
   </a>
 </div>
-
-  <!-- Map -->
-  <div class="bubble-container">
-    <div class="bubble">
-        <iframe
-            width="100%"
-            height="250"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/view?key=AIzaSyA-HXVa2jtkGfKtIJwisxgC46RaWqC1xuI&center=20.6978878, -103.31490338&zoom=17" allowfullscreen>
-            </iframe>
-    </div>    
-    <div class="arrow"></div>
-</div>
-<!-- Map -->
 
 <div class="content" role="main">
 
