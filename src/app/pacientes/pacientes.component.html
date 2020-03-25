@@ -1,0 +1,20 @@
+<div class="container">
+    <form>
+        <div class="form-group col-md-2">
+            <label>Id:</label>
+            <input type="text" name="id" id="id" placeholder="Id" class="form-control" [(ngModel)]="id_p">
+        </div>
+        <div class="col">
+            <button class="btn btn-primary" type="submit"
+                (click)="onAgregarPaciente()">Agregar</button>
+        </div>
+    </form>
+    <hr/>
+    <div class="row">
+        <div class="col-xs-12">
+            <div *ngFor="let p of pacientes; let i = index">
+                {{i+1}}: {{p.id}}
+            </div>
+        </div>
+    </div>
+</div>
