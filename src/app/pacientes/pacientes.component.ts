@@ -8,10 +8,14 @@ import { Ubicacion } from './ubicacion.model';
   styleUrls: ['./pacientes.component.css']
 })
 export class PacientesComponent {
+
   pacientes : Paciente[] = [new Paciente(1),new Paciente(2)];
   id_p : number;
+  ubicacion : Ubicacion;
+  latitud : number = 20.6748751;
+  longitd : number = -103.3589671;
 
-  constructor() {
+  constructor() {    
   }
 
   onAgregarPaciente(){

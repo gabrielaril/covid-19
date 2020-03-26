@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
+import { PouchdbService } from './pouchdb.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PacientesComponent,
+    PacientesComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +20,9 @@ import { PacientesComponent } from './pacientes/pacientes.component';
     }),
     FormsModule
   ],
-  providers: [],
+  providers: [
+    PouchdbService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

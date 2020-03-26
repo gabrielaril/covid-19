@@ -1,4 +1,17 @@
 <div class="container">
+    <div class="row border border-info" >
+            
+            <div class="col-xs-12">
+                <agm-map [latitude] = "latitud" [longitude] = "longitud">
+                    <agm-marker 
+                        *ngFor="let ubi of pacientes.ubicaciones"      
+                        [latitude]="ubi.latitud"
+                        [longitude]="ubi.longitud"
+                        [markerDraggable]="false">
+                    </agm-marker>
+                </agm-map>
+            </div>
+        </div>
     <form>
         <div class="form-group col-md-2">
             <label>Id:</label>
@@ -16,5 +29,6 @@
                 {{i+1}}: {{p.id}}
             </div>
         </div>
-    </div>
+    </div>    
+
 </div>
