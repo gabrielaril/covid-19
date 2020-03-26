@@ -7,7 +7,7 @@
           <h2>TRAYECTORIA DEL PACIENTE</h2>
           <!-- Map -->
           <div class="bubble-container">
-            <div class="bubble">
+            <div class="bubble border border-info">
               <agm-map [latitude] = "latitude" [longitude] = longitude>
                 <agm-marker 
                     *ngFor="let m of markers"      
@@ -50,6 +50,5 @@
     </div>
   </div>
 </div>
-<app-pacientes></app-pacientes>
 
 <router-outlet></router-outlet>
