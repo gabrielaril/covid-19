@@ -1,6 +1,29 @@
 <div id="contact-info">
     <div class="container">
         <div class="row">
+            <div class="contact col-md-6 wow fadeIn delay-08s">
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="form-group">
+                        <input type="file" name="files" (change)="uploadFile($event)" />
+                    </div>
+                    <form #agrForm="ngForm" (ngSubmit)="onAgregarUbicacion()" class="contactForm">
+                        <div class="form-group">
+                            <input type="text" name="edad" class="form-control" id="edad" placeholder="Edad"
+                                #edad="ngModel" [(ngModel)]="paciente.edad" data-rule="minlen:4"
+                                data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="latitud" class="form-control" id="coordenadas"
+                                placeholder="Coodenadas" #coordenada="ngModel" [(ngModel)]="cord" data-rule="minlen:4"
+                                data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="text-center"><button type="submit" class="agregar-submit">Marcar punto</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="col-md-6">
                 <div class="contact-title">
                     <i class="fa fa-map-marker"></i>
@@ -14,36 +37,33 @@
                                 </agm-marker>
                             </agm-map>
                         </div>
-                        <div class="arrow"></div>
+                        <hr style="border-color:white;">
+                        <div>
+                            <table class="table table-striped table-dark">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Latitud</th>
+                                        <th scope="col">Longitud</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let u of paciente.ubicaciones">
+                                        <th scope="row">{{u.id}}</th>
+                                        <td>{{u.latitud}}</td>
+                                        <td>{{u.longitud}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="text-center"><button type="submit" class="guardar-submit"
+                                (click)="onAgregarPaciente()">GUARDAR PACIENTE</button>
+                        </div>
                     </div>
                     <!-- Map -->
                 </div>
-            </div>
-            <div class="contact col-md-6 wow fadeIn delay-08s">
-                <div class="col-md-6 col-md-offset-1">
-                    <div id="note"></div>
-                    <div id="sendmessage">Your message has been sent. Thank you!</div>
-                    <div id="errormessage"></div>
-                    <form action="" method="post" role="form" class="contactForm">
-                        <div class="form-group">
-                            <input type="text" name="edad" class="form-control" id="edad" placeholder="Edad"
-                                data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="lat" class="form-control" id="lat" placeholder="Latitud"
-                                data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="lng" id="lng" placeholder="Longitud"
-                                data-msg="Please enter a valid email" />
-                            <div class="validation"></div>
-                        </div>
-                        <div class="text-center"><button type="submit" class="contact-submit">Marcar punto</button>
-                        </div>
-                    </form>
-                </div>
+
+
             </div>
         </div>
     </div>

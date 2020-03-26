@@ -1,3 +1,45 @@
 agm-map {
     height: 300px;
 }
+
+.agregar-submit {
+    background-color: #24B7A4;
+    border: 2px solid #24B7A4;
+    color: #FFFFFF;
+    width: 100%;
+    display: block;
+    word-spacing: 1px;
+    outline: none;
+    margin: 0 auto;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 700;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease-in-out !important;
+    -moz-transition: all 0.3s ease-in-out !important;
+    -ms-transition: all 0.3s ease-in-out !important;
+    -o-transition: all 0.3s ease-in-out !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+.guardar-submit {
+    background-color: #FE642E;
+    border: 2px solid #FE642E;
+    color: #FFFFFF;
+    width: 100%;
+    display: block;
+    word-spacing: 1px;
+    outline: none;
+    margin: 0 auto;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    font-weight: 700;
+    padding: 10px;
+    -webkit-transition: all 0.3s ease-in-out !important;
+    -moz-transition: all 0.3s ease-in-out !important;
+    -ms-transition: all 0.3s ease-in-out !important;
+    -o-transition: all 0.3s ease-in-out !important;
+    transition: all 0.3s ease-in-out !important;
+}

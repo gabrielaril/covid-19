@@ -2,11 +2,12 @@ import { Ubicacion } from './ubicacion.model';
 export class Paciente {
 
     id: number;
+    edad: number;
     ubicaciones: Ubicacion[];
 
-    constructor(id: number) {
-        this.id= id;
+    constructor(obj?: any) {
+        Object.assign(this, obj);
+        this.ubicaciones = [];
     }
 
-    
 }
